@@ -32,8 +32,9 @@ server.post('/auth/register', async (req, res) => {
 server.post('/auth/login', async (req, res) => {
   // checks whether credentials legit
   try {
-    // 1- use the req.username to find in the db the user with said username
-    // 2- 
+    // 1- use the req.username to find in the db the user with said username 
+    // 2- compare the bcrypt has of the user we just pulled against req.body.password
+
   } catch (err) {
     res.status(500).json({ message: err.message })
   }
