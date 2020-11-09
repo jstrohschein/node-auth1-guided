@@ -30,7 +30,7 @@ server.post('/auth/register', async (req, res) => {
 })
 
 server.post('/auth/login', (req, res) => {
-
+  // 
 })
 
 // [GET] logout no need for req.body
