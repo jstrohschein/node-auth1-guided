@@ -17,7 +17,10 @@ server.use(cors());
 server.use(session({
   name: 'monkey',
   secret: 'this should come from process.env',
-  cookie: 
+  cookie: {
+    maxAge: 1000 * 10,
+    secure: false // in production do true ()
+  },
 }));
 
 // [POST] register and login (we need to send paylod - req.body)
