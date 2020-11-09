@@ -16,7 +16,7 @@ server.use(express.json());
 server.use(cors());
 server.use(session({
   name: 'monkey',
-  secret: 'this should come from process.env',
+  secret: 'this should come from process.env', // the cookie is encrypted
   cookie: {
     maxAge: 1000 * 10,
     secure: false, // in production do true (https is a must)
