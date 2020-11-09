@@ -12,6 +12,10 @@ server.use(express.json());
 server.use(cors());
 
 // endpoints
+server.post('/auth/register', (req, res) => {
+
+})
+
 
 
 server.use("/api/users", usersRouter);
