@@ -34,7 +34,8 @@ server.post('/auth/login', async (req, res) => {
   try {
     // 1- use the req.username to find in the db the user with said username 
     // 2- compare the bcrypt has of the user we just pulled against req.body.password
-    Users.findBy({ username: req.body.use })
+    const user = await Users.findBy({ username: req.body.username })
+    // if no user, send back a failure message
   } catch (err) {
     res.status(500).json({ message: err.message })
   }
