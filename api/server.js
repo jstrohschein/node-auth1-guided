@@ -18,7 +18,7 @@ server.use(session({
   name: 'monkey',
   secret: 'this should come from process.env', // the cookie is encrypted
   cookie: {
-    maxAge: 1000 * 20,
+    maxAge: 1000 * 60,
     secure: false, // in production do true (https is a must)
     httpOnly: true, // this means the JS on the page cannot read the cookie
   },
@@ -64,6 +64,7 @@ server.post('/auth/login', async (req, res) => {
   }
 })
 
+// [GET] logout no need for req.body
 server.get('/auth/logout', (req, res) => {
   if (req.session && req.session.user) {
     // we need to destroy the session
@@ -74,13 +75,7 @@ server.get('/auth/logout', (req, res) => {
   } else {
     res.json({ message: 'you had no session actually!' })
   }
-})
-
-// [GET] logout no need for req.body
-server.get('/auth/logout', (req, res) => {
-
-})
-
+});
 
 server.use("/api/users", usersRouter);
 
