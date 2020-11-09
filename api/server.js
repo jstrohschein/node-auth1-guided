@@ -51,6 +51,7 @@ server.post('/auth/login', async (req, res) => {
     const [user] = await Users.findBy({ username: req.body.username });
     if (user && bcrypt.compareSync(req.body.password, user.password)) {
       // 3- if user AND credentials good then welcome message
+      req.session.user = user
       res.json({ message: `welcome back, ${user.username}` });
     } else {
       // 4- if no user, send back a failure message
