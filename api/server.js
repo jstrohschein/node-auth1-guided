@@ -17,7 +17,8 @@ server.post('/auth/register', async (req, res) => {
   try {
 
   } catch (err) {
-    
+    // res.status(500).json({ message: 'Something went terrible' }) // PRODUCTION
+    res.status(500).json({ message: 'Something went terrible' })
   }
 })
 
