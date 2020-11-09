@@ -4,10 +4,10 @@ const Users = require("./users-model.js");
 
 // put this middleware in a centralized location
 function secure(req, res, next) {
-  
+  next()
 }
 
-router.get("/", (req, res) => {
+router.get("/", secure, (req, res) => {
   Users.find()
     .then(users => {
       res.status(200).json(users);
