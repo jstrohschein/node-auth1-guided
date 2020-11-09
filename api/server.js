@@ -23,6 +23,7 @@ server.post('/auth/register', async (req, res) => {
     // we will insert a record WITHOUT the raw password
     const user = { username, password: hash, role: 2 };
     const addedUser = await Users.add(user);
+    // send back the record to the client
     res.json(addedUser);
   } catch (err) {
     // res.status(500).json({ message: 'Something went terrible' }) // PRODUCTION
