@@ -68,7 +68,8 @@ server.get('/auth/logout', (req, res) => {
   if (req.session && req.session.user) {
     // we need to destroy the session
     req.session.destroy(err => {
-      if (err) 
+      if (err) res.json({ message: 'you can not leave' })
+      else res.json({ message: 'good bye' })
     })
   } else {
     res.json({ message: 'you had no session actually!' })
