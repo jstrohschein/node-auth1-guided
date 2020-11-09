@@ -20,6 +20,7 @@ server.post('/auth/register', async (req, res) => {
     const { username, password } = req.body;
     // do the hash, add the hash to the db
     const hash = bcrypt.hashSync(password, 10); // 2 ^ 10 rounds of hashing
+    // we will insert a record WITHOUT the raw password
     const user = { username, password: hash, role: 2 };
     const addedUser = await Users.add(user);
     res.json(addedUser);
