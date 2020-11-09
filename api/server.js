@@ -37,7 +37,7 @@ server.post('/auth/login', async (req, res) => {
     // 1- use the req.username to find in the db the user with said username 
     // 2- compare the bcrypt has of the user we just pulled against req.body.password
     const [user] = await Users.findBy({ username: req.body.username });
-    if (user && bcrypt.compareSync(req.body.password, /* hash in idb*/ user.password)) {
+    if (user && bcrypt.compareSync(req.body.password, user.password)) {
       // 3- if user AND credentials good then welcome message
       res.json({ message: `welcome back, ${user.username}` });
     } else {
