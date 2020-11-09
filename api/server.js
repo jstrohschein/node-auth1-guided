@@ -16,7 +16,8 @@ server.use(express.json());
 server.use(cors());
 server.use(session({
   name: 'monkey',
-  secret: ''
+  secret: 'this should come from process.env',
+  cookie: 
 }));
 
 // [POST] register and login (we need to send paylod - req.body)
