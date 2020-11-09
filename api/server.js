@@ -38,12 +38,12 @@ server.post('/auth/login', async (req, res) => {
     // 2- compare the bcrypt has of the user we just pulled against req.body.password
     const [user] = await Users.findBy({ username: req.body.username });
     if (user) {
+      // 4- if user but credentials bad send packing
       res.json({ message: `welcome back, ${user.username}` });
     } else {
+      // 3- if no user, send back a failure message
       res.status(401).json({ message: 'bad credentials' });
     }
-    // 3- if no user, send back a failure message
-    // 4- if user but credentials bad send packing
     // 5- if user AND credentials good then welcome message
   } catch (err) {
     // res.status(500).json({ message: 'bad credentials' }); /// PRODUCTION
