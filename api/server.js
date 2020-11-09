@@ -16,6 +16,8 @@ server.use(cors());
 server.post('/auth/register', async (req, res) => {
   try {
     const { username, password } = req.body
+    // do the hash, add the hash to the db
+    const hash = bcrypt.hashSync
   } catch (err) {
     // res.status(500).json({ message: 'Something went terrible' }) // PRODUCTION
     res.status(500).json({ message: err.message })
