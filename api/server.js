@@ -25,13 +25,13 @@ server.use(session({
   },
   resave: false, // we don't want to recreate sessions that haven't changed
   saveUninitialized: false, // we don't want to persist the session 'by default' (GDPR!!!!)
-  store: {
+  store: new sessionStore({
     knex: require('../database/connection'),
     tablename: 'sessions',
     sidfieldname: 'sid',
     createTable: true,
     clearInterval: 1000 * 60 * 60,
-  }
+  }),
 }));
 
 // [POST] register and login (we need to send paylod - req.body)
