@@ -13,8 +13,12 @@ server.use(express.json());
 server.use(cors());
 
 // [POST] register and login (we need to send paylod - req.body)
-server.post('/auth/register', (req, res) => {
+server.post('/auth/register', async (req, res) => {
+  try {
 
+  } catch (err) {
+    
+  }
 })
 
 server.post('/auth/login', (req, res) => {
