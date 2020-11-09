@@ -11,11 +11,19 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 
-// endpoints
+// [POST]
 server.post('/auth/register', (req, res) => {
 
 })
 
+server.post('/auth/login', (req, res) => {
+
+})
+
+// [GET]
+server.get('/auth/login', (req, res) => {
+
+})
 
 
 server.use("/api/users", usersRouter);
