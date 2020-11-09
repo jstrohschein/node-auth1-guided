@@ -23,7 +23,7 @@ server.use(session({
     httpOnly: true, // this means the JS on the page cannot read the cookie
   },
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: false, // we don't want to persist the session 'by default'
 }));
 
 // [POST] register and login (we need to send paylod - req.body)
