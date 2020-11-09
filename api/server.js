@@ -59,7 +59,7 @@ server.post('/auth/login', async (req, res) => {
     // 2- compare the bcrypt has of the user we just pulled against req.body.password
     const [user] = await Users.findBy({ username: req.body.username });
     if (user && bcrypt.compareSync(req.body.password, user.password)) {
-      // 3- if user AND credentials good then welcome message
+      // 3- if user AND credentials good then save the session AND SEND COOKIE
       req.session.user = user
       res.json({ message: `welcome back, ${user.username}` });
     } else {
