@@ -28,7 +28,9 @@ server.use(session({
   store: {
     knex: require('../database/connection'),
     tablename: 'sessions',
-    
+    sidfieldname: 'sid',
+    createTable: true,
+    clearInterval: 1000 * 60 * 60,
   }
 }));
 
