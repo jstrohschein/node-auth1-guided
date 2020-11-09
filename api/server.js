@@ -17,12 +17,12 @@ server.use(cors());
 // [POST] register and login (we need to send paylod - req.body)
 server.post('/auth/register', async (req, res) => {
   try {
-    const { username, password } = req.body
+    const { username, password } = req.body;
     // do the hash, add the hash to the db
-    const hash = bcrypt.hashSync(password, 10) // 2 ^ 10 rounds of hashing
-    const user = { username, password: hash, role: 2 }
-    const addedUser = await Users.add(user)
-    res.json(addedUser)
+    const hash = bcrypt.hashSync(password, 10); // 2 ^ 10 rounds of hashing
+    const user = { username, password: hash, role: 2 };
+    const addedUser = await Users.add(user);
+    res.json(addedUser);
   } catch (err) {
     // res.status(500).json({ message: 'Something went terrible' }) // PRODUCTION
     res.status(500).json({ message: err.message })
