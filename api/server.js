@@ -18,7 +18,7 @@ server.use(session({
   name: 'monkey',
   secret: 'this should come from process.env', // the cookie is encrypted
   cookie: {
-    maxAge: 1000 * 10,
+    maxAge: 1000 * 20,
     secure: false, // in production do true (https is a must)
     httpOnly: true, // this means the JS on the page cannot read the cookie
   },
