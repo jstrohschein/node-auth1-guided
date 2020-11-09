@@ -67,6 +67,8 @@ server.post('/auth/login', async (req, res) => {
 server.get('/auth/logout', (req, res) => {
   if (req.session && req.session.user) {
     // we need to destroy the session
+  } else {
+    res.json({ message: 'you had no session actually!' })
   }
 })
 
