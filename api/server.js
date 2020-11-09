@@ -22,8 +22,8 @@ server.use(session({
     secure: false, // in production do true (https is a must)
     httpOnly: true, // this means the JS on the page cannot read the cookie
   },
-  resave: false,
-  saveUninitialized: false, // we don't want to persist the session 'by default'
+  resave: false, // we don't want to recreate sessions that haven't changed
+  saveUninitialized: false, // we don't want to persist the session 'by default' (GDPR!!!!)
 }));
 
 // [POST] register and login (we need to send paylod - req.body)
