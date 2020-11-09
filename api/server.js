@@ -25,6 +25,7 @@ server.use(session({
   },
   resave: false, // we don't want to recreate sessions that haven't changed
   saveUninitialized: false, // we don't want to persist the session 'by default' (GDPR!!!!)
+  // s
   store: new sessionStore({
     knex: require('../database/connection'),
     tablename: 'sessions',
