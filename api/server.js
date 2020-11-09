@@ -19,7 +19,8 @@ server.use(session({
   secret: 'this should come from process.env',
   cookie: {
     maxAge: 1000 * 10,
-    secure: false // in production do true ()
+    secure: false, // in production do true (https is a must)
+    httpOnly: true, // this means the JS on the page cannot read the cookie
   },
 }));
 
