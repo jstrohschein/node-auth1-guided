@@ -4,7 +4,7 @@ const cors = require("cors");
 // we will bring bcrypt onboard
 const bcrypt = require('bcryptjs');
 const session = require('express-session');
-
+const sessionStore = require('connect-session-knex')(session);
 // pull in Users model (to do db operations)
 const Users = require('../users/users-model');
 
