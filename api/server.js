@@ -14,6 +14,7 @@ const server = express();
 server.use(helmet());
 server.use(express.json());
 server.use(cors());
+server.use(session());
 
 // [POST] register and login (we need to send paylod - req.body)
 server.post('/auth/register', async (req, res) => {
