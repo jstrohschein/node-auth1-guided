@@ -2,6 +2,11 @@ const router = require("express").Router();
 
 const Users = require("./users-model.js");
 
+// put this middleware in a centralized location
+function secure(req, res, next) {
+  
+}
+
 router.get("/", (req, res) => {
   Users.find()
     .then(users => {
