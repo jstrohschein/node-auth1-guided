@@ -3,6 +3,8 @@ const helmet = require("helmet");
 const cors = require("cors");
 // we will bring bcrypt onboard
 const bcrypt = require('bcryptjs');
+// pull in Users model (to do db operations)
+const Users = require()
 
 const usersRouter = require("../users/users-router.js");
 
