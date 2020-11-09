@@ -29,8 +29,8 @@ server.post('/auth/register', async (req, res) => {
   }
 })
 
-server.post('/auth/login', (req, res) => {
-  // 
+server.post('/auth/login', async (req, res) => {
+  // checks whether credentials legit
 })
 
 // [GET] logout no need for req.body
