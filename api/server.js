@@ -64,6 +64,10 @@ server.post('/auth/login', async (req, res) => {
   }
 })
 
+server.get('/auth/logout', (req, res) => {
+  
+})
+
 // [GET] logout no need for req.body
 server.get('/auth/logout', (req, res) => {
 
